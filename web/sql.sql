@@ -1,8 +1,8 @@
 /*Individual Table*/
-create table individual (id int primary key auto_increment,group_id int default 0,fname varchar(40) not null,lname varchar(40) default '',emailid varchar(50) not null unique,password varchar(50) not null);
+create table individual (id int primary key auto_increment,group_id int default 0,fname varchar(40) not null,lname varchar(40) default '',emailid varchar(50) not null unique,password varchar(50) not null,address varchar(500) not null,city varchar(500) not null,country varchar(500) not null,skills varchar(500) not null,qualification varchar(500) not null,work_ex int not null);
 
 /*Company Details Table*/
-create table company (cid int primary key auto_increment,cname varchar(50) not null,emailid varchar(50) not null unique,password varchar(50) not null,address varchar(100) not null,city varchar(40) not null,country varchar(40) not null,phoneno varchar(15));
+create table company (cid int primary key auto_increment,cname varchar(50) not null,emailid varchar(50) not null unique,password varchar(50) not null,address varchar(100) not null,city varchar(40) not null,country varchar(40) not null,phoneno varchar(15),goals varchar(500) not null,type varchar(500) not null);
 
 /*Company Offices Table*/
 create table office (oid int primary key auto_increment,cid int,name varchar(50) default '',address varchar(100) not null,city varchar(40) not null,country varchar(40) not null,phoneno varchar(15),foreign key(cid) references company(cid) on delete cascade);
